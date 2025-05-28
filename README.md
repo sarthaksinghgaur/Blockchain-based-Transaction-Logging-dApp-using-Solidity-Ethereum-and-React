@@ -114,7 +114,7 @@ npm install
 - Start the React app:
 
 ```bash
-npm start
+npm run dev
 ```
 
 - The app will open in your browser at `http://localhost:3000`.
