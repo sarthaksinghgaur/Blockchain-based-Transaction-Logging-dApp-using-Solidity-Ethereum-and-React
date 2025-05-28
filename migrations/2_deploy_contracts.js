@@ -1,5 +1,5 @@
-const TransactionLogger = artifacts.require("TransactionLogger");
+const Transactions = artifacts.require("Transactions");
 
 module.exports = function(deployer) {
-  deployer.deploy(TransactionLogger);
+  deployer.deploy(Transactions);
 };

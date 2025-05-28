@@ -1,0 +1,1703 @@
+{
+  "contractName": "Transactions",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "logs",
+      "outputs": [
+        {
+          "name": "message",
+          "type": "string"
+        },
+        {
+          "name": "timestamp",
+          "type": "uint256"
+        },
+        {
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0xe79899bd"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "message",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "TransactionAdded",
+      "type": "event",
+      "signature": "0xf9548a9667c9caa7ef622cce3ec3f875196c55075f95b5c4a0e505637fed0b9c"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_message",
+          "type": "string"
+        }
+      ],
+      "name": "addTransaction",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0x517715f0"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getAllTransactions",
+      "outputs": [
+        {
+          "components": [
+            {
+              "name": "message",
+              "type": "string"
+            },
+            {
+              "name": "timestamp",
+              "type": "uint256"
+            },
+            {
+              "name": "sender",
+              "type": "address"
+            }
+          ],
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0x27506f53"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getTransactionCount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0x2e7700f0"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506107af806100206000396000f3fe6080604052600436106100615763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166327506f5381146100665780632e7700f014610091578063517715f0146100b3578063e79899bd146100d5575b600080fd5b34801561007257600080fd5b5061007b610104565b6040516100889190610646565b60405180910390f35b34801561009d57600080fd5b506100a6610223565b60405161008891906106a4565b3480156100bf57600080fd5b506100d36100ce3660046104ef565b610229565b005b3480156100e157600080fd5b506100f56100f036600461052c565b61031c565b60405161008893929190610677565b60606000805480602002602001604051908101604052809291908181526020016000905b828210156102195760008481526020908190206040805160038602909201805460026001821615610100026000190190911604601f81018590049094028301608090810190925260608301848152929390928492909184918401828280156101d15780601f106101a6576101008083540402835291602001916101d1565b820191906000526020600020905b8154815290600101906020018083116101b457829003601f168201915b505050918352505060018281015460208084019190915260029093015473ffffffffffffffffffffffffffffffffffffffff1660409092019190915291835292019101610128565b5050505090505b90565b60005490565b60408051606081018252828152426020808301919091523392820192909252600080546001810180835591805282518051929460039092027f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563019261029192849201906103f0565b50602082015160018201556040918201516002909101805473ffffffffffffffffffffffffffffffffffffffff191673ffffffffffffffffffffffffffffffffffffffff909216919091179055513391507ff9548a9667c9caa7ef622cce3ec3f875196c55075f95b5c4a0e505637fed0b9c906103119084904290610657565b60405180910390a250565b600080548290811061032a57fe5b60009182526020918290206003919091020180546040805160026001841615610100026000190190931692909204601f8101859004850283018501909152808252919350918391908301828280156103c35780601f10610398576101008083540402835291602001916103c3565b820191906000526020600020905b8154815290600101906020018083116103a657829003601f168201915b50505050600183015460029093015491929173ffffffffffffffffffffffffffffffffffffffff16905083565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061043157805160ff191683800117855561045e565b8280016001018555821561045e579182015b8281111561045e578251825591602001919060010190610443565b5061046a92915061046e565b5090565b61022091905b8082111561046a5760008155600101610474565b6000601f8201831361049957600080fd5b81356104ac6104a7826106df565b6106b8565b915080825260208301602083018583830111156104c857600080fd5b6104d383828461072f565b50505092915050565b60006104e88235610220565b9392505050565b60006020828403121561050157600080fd5b813567ffffffffffffffff81111561051857600080fd5b61052484828501610488565b949350505050565b60006020828403121561053e57600080fd5b600061052484846104dc565b61055381610711565b82525050565b60006105648261070d565b8084526020840193508360208202850161057d85610707565b60005b848110156105b45783830388526105988383516105f5565b92506105a382610707565b602098909801979150600101610580565b50909695505050505050565b60006105cb8261070d565b8084526105df81602086016020860161073b565b6105e88161076b565b9093016020019392505050565b805160608084526000919084019061060d82826105c0565b9150506020830151610622602086018261063d565b506040830151610635604086018261054a565b509392505050565b61055381610220565b602080825281016104e88184610559565b6040808252810161066881856105c0565b90506104e8602083018461063d565b6060808252810161068881866105c0565b9050610697602083018561063d565b610524604083018461054a565b602081016106b2828461063d565b92915050565b60405181810167ffffffffffffffff811182821017156106d757600080fd5b604052919050565b600067ffffffffffffffff8211156106f657600080fd5b506020601f91909101601f19160190565b60200190565b5190565b600073ffffffffffffffffffffffffffffffffffffffff82166106b2565b82818337506000910152565b60005b8381101561075657818101518382015260200161073e565b83811115610765576000848401525b50505050565b601f01601f19169056fea265627a7a723058205f3b34ba1644be03dd2d1b5a0d64cbe32f0fce220aabded7250b1c68465f336c6c6578706572696d656e74616cf50037",
+  "deployedBytecode": "0x6080604052600436106100615763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166327506f5381146100665780632e7700f014610091578063517715f0146100b3578063e79899bd146100d5575b600080fd5b34801561007257600080fd5b5061007b610104565b6040516100889190610646565b60405180910390f35b34801561009d57600080fd5b506100a6610223565b60405161008891906106a4565b3480156100bf57600080fd5b506100d36100ce3660046104ef565b610229565b005b3480156100e157600080fd5b506100f56100f036600461052c565b61031c565b60405161008893929190610677565b60606000805480602002602001604051908101604052809291908181526020016000905b828210156102195760008481526020908190206040805160038602909201805460026001821615610100026000190190911604601f81018590049094028301608090810190925260608301848152929390928492909184918401828280156101d15780601f106101a6576101008083540402835291602001916101d1565b820191906000526020600020905b8154815290600101906020018083116101b457829003601f168201915b505050918352505060018281015460208084019190915260029093015473ffffffffffffffffffffffffffffffffffffffff1660409092019190915291835292019101610128565b5050505090505b90565b60005490565b60408051606081018252828152426020808301919091523392820192909252600080546001810180835591805282518051929460039092027f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563019261029192849201906103f0565b50602082015160018201556040918201516002909101805473ffffffffffffffffffffffffffffffffffffffff191673ffffffffffffffffffffffffffffffffffffffff909216919091179055513391507ff9548a9667c9caa7ef622cce3ec3f875196c55075f95b5c4a0e505637fed0b9c906103119084904290610657565b60405180910390a250565b600080548290811061032a57fe5b60009182526020918290206003919091020180546040805160026001841615610100026000190190931692909204601f8101859004850283018501909152808252919350918391908301828280156103c35780601f10610398576101008083540402835291602001916103c3565b820191906000526020600020905b8154815290600101906020018083116103a657829003601f168201915b50505050600183015460029093015491929173ffffffffffffffffffffffffffffffffffffffff16905083565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061043157805160ff191683800117855561045e565b8280016001018555821561045e579182015b8281111561045e578251825591602001919060010190610443565b5061046a92915061046e565b5090565b61022091905b8082111561046a5760008155600101610474565b6000601f8201831361049957600080fd5b81356104ac6104a7826106df565b6106b8565b915080825260208301602083018583830111156104c857600080fd5b6104d383828461072f565b50505092915050565b60006104e88235610220565b9392505050565b60006020828403121561050157600080fd5b813567ffffffffffffffff81111561051857600080fd5b61052484828501610488565b949350505050565b60006020828403121561053e57600080fd5b600061052484846104dc565b61055381610711565b82525050565b60006105648261070d565b8084526020840193508360208202850161057d85610707565b60005b848110156105b45783830388526105988383516105f5565b92506105a382610707565b602098909801979150600101610580565b50909695505050505050565b60006105cb8261070d565b8084526105df81602086016020860161073b565b6105e88161076b565b9093016020019392505050565b805160608084526000919084019061060d82826105c0565b9150506020830151610622602086018261063d565b506040830151610635604086018261054a565b509392505050565b61055381610220565b602080825281016104e88184610559565b6040808252810161066881856105c0565b90506104e8602083018461063d565b6060808252810161068881866105c0565b9050610697602083018561063d565b610524604083018461054a565b602081016106b2828461063d565b92915050565b60405181810167ffffffffffffffff811182821017156106d757600080fd5b604052919050565b600067ffffffffffffffff8211156106f657600080fd5b506020601f91909101601f19160190565b60200190565b5190565b600073ffffffffffffffffffffffffffffffffffffffff82166106b2565b82818337506000910152565b60005b8381101561075657818101518382015260200161073e565b83811115610765576000848401525b50505050565b601f01601f19169056fea265627a7a723058205f3b34ba1644be03dd2d1b5a0d64cbe32f0fce220aabded7250b1c68465f336c6c6578706572696d656e74616cf50037",
+  "sourceMap": "59:556:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;59:556:1;;;;;;;",
+  "deployedSourceMap": "59:556:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;435:87;;8:9:-1;5:2;;;30:1;27;20:12;5:2;435:87:1;;;;;;;;;;;;;;;;;;;;526;;8:9:-1;5:2;;;30:1;27;20:12;5:2;526:87:1;;;;;;;;;;;;270:161;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;270:161:1;;;;;;;;;;;165:17;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;165:17:1;;;;;;;;;;;;;;;;;;;435:87;486:12;513:4;506:11;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;506:11:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;506:11:1;;;-1:-1:-1;;506:11:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;435:87;;:::o;526:::-;578:4;597:11;526:87;:::o;270:161::-;341:30;;;;;;;;;;;355:3;341:30;;;;;;;;360:10;341:30;;;;;;;331:4;27:10:-1;;39:1;23:18;;45:23;;;331:41:1;;;;;;;23:18:-1;;331:41:1;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;331:41:1;;;;;;;;;;;;;;;;;;;-1:-1:-1;;331:41:1;;;;;;;;;;;383:43;400:10;;-1:-1:-1;383:43:1;;;;412:8;;422:3;;383:43;;;;;;;;;;270:161;:::o;165:17::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;165:17:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;165:17:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;165:17:1;;;;;;;;;;;;;;;-1:-1:-1;165:17:1;:::o;59:556::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;59:556:1;;;-1:-1:-1;59:556:1;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;6:442:-1;;101:4;89:17;;85:27;-1:-1;75:2;;126:1;123;116:12;75:2;163:6;150:20;185:65;200:49;242:6;200:49;;;185:65;;;176:74;;270:6;263:5;256:21;306:4;298:6;294:17;339:4;332:5;328:16;374:3;365:6;360:3;356:16;353:25;350:2;;;391:1;388;381:12;350:2;401:41;435:6;430:3;425;401:41;;;68:380;;;;;;;;456:118;;523:46;561:6;548:20;523:46;;;514:55;508:66;-1:-1;;;508:66;581:347;;695:2;683:9;674:7;670:23;666:32;663:2;;;711:1;708;701:12;663:2;746:31;;797:18;786:30;;783:2;;;829:1;826;819:12;783:2;849:63;904:7;895:6;884:9;880:22;849:63;;;839:73;657:271;-1:-1;;;;657:271;935:241;;1039:2;1027:9;1018:7;1014:23;1010:32;1007:2;;;1055:1;1052;1045:12;1007:2;1090:1;1107:53;1152:7;1132:9;1107:53;;1183:110;1256:31;1281:5;1256:31;;;1251:3;1244:44;1238:55;;;1363:836;;1528:69;1591:5;1528:69;;;1615:6;1610:3;1603:19;1639:4;1634:3;1630:14;1623:21;;1687:3;1729:4;1721:6;1717:17;1712:3;1708:27;1755:71;1820:5;1755:71;;;1847:1;1832:328;1857:6;1854:1;1851:13;1832:328;;;1919:9;1913:4;1909:20;1904:3;1897:33;1945:88;2028:4;2019:6;2013:13;1945:88;;;1937:96;;2050:75;2118:6;2050:75;;;2148:4;2139:14;;;;;2040:85;-1:-1;1879:1;1872:9;1832:328;;;-1:-1;2173:4;;1507:692;-1:-1;;;;;;1507:692;2207:300;;2309:39;2342:5;2309:39;;;2365:6;2360:3;2353:19;2377:63;2433:6;2426:4;2421:3;2417:14;2410:4;2403:5;2399:16;2377:63;;;2472:29;2494:6;2472:29;;;2452:50;;;2465:4;2452:50;;2289:218;-1:-1;;;2289:218;2870:732;3067:22;;2995:4;3101:37;;;2870:732;;2986:14;;;;3153:68;2986:14;3067:22;3153:68;;;3145:76;;3015:218;3314:4;3307:5;3303:16;3297:23;3332:62;3388:4;3383:3;3379:14;3366:11;3332:62;;;3243:163;3484:4;3477:5;3473:16;3467:23;3502:62;3558:4;3553:3;3549:14;3536:11;3502:62;;;-1:-1;3593:4;2968:634;-1:-1;;;2968:634;3609:110;3682:31;3707:5;3682:31;;3726:401;3914:2;3928:47;;;3899:18;;3989:128;3899:18;4103:6;3989:128;;4134:382;4290:2;4304:47;;;4275:18;;4365:68;4275:18;4419:6;4365:68;;;4357:76;;4444:62;4502:2;4491:9;4487:18;4478:6;4444:62;;4523:475;4703:2;4717:47;;;4688:18;;4778:64;4688:18;4828:6;4778:64;;;4770:72;;4853:62;4911:2;4900:9;4896:18;4887:6;4853:62;;;4926;4984:2;4973:9;4969:18;4960:6;4926:62;;5005:193;5113:2;5098:18;;5127:61;5102:9;5161:6;5127:61;;;5084:114;;;;;5205:256;5267:2;5261:9;5293:17;;;5368:18;5353:34;;5389:22;;;5350:62;5347:2;;;5425:1;5422;5415:12;5347:2;5441;5434:22;5245:216;;-1:-1;5245:216;5468:259;;5612:18;5604:6;5601:30;5598:2;;;5644:1;5641;5634:12;5598:2;-1:-1;5717:4;5688;5665:17;;;;-1:-1;;5661:33;5707:15;;5535:192;5736:136;5860:4;5848:17;;5829:43;5881:122;5986:12;;5970:33;6350:105;;6542:42;6531:54;;6419:31;6514:76;6770:145;6851:6;6846:3;6841;6828:30;-1:-1;6907:1;6889:16;;6882:27;6821:94;6924:268;6989:1;6996:101;7010:6;7007:1;7004:13;6996:101;;;7077:11;;;7071:18;7058:11;;;7051:39;7032:2;7025:10;6996:101;;;7112:6;7109:1;7106:13;7103:2;;;7177:1;7168:6;7163:3;7159:16;7152:27;7103:2;6973:219;;;;;7200:97;7288:2;7268:14;-1:-1;;7264:28;;7248:49",
+  "source": "pragma solidity ^0.5.0;\npragma experimental ABIEncoderV2;\n\ncontract Transactions {\n  struct Log {\n    string message;\n    uint timestamp;\n    address sender;\n  }\n\n  Log[] public logs;\n\n  event TransactionAdded(address indexed sender, string message, uint timestamp);\n\n  function addTransaction(string memory _message) public {\n    logs.push(Log(_message, now, msg.sender));\n    emit TransactionAdded(msg.sender, _message, now);\n  }\n\n  function getAllTransactions() public view returns (Log[] memory) {\n    return logs;\n  }\n\n  function getTransactionCount() public view returns (uint) {\n    return logs.length;\n  }\n}",
+  "sourcePath": "/Users/sarthaksinghgaur/Blockchain-based-Transaction-Logging-dApp-using-Solidity-Ethereum-and-React/contracts/Transactions.sol",
+  "ast": {
+    "absolutePath": "/Users/sarthaksinghgaur/Blockchain-based-Transaction-Logging-dApp-using-Solidity-Ethereum-and-React/contracts/Transactions.sol",
+    "exportedSymbols": {
+      "Transactions": [
+        96
+      ]
+    },
+    "id": 97,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 34,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "id": 35,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "24:33:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 96,
+        "linearizedBaseContracts": [
+          96
+        ],
+        "name": "Transactions",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Transactions.Log",
+            "id": 42,
+            "members": [
+              {
+                "constant": false,
+                "id": 37,
+                "name": "message",
+                "nodeType": "VariableDeclaration",
+                "scope": 42,
+                "src": "102:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 36,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "102:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 39,
+                "name": "timestamp",
+                "nodeType": "VariableDeclaration",
+                "scope": 42,
+                "src": "122:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 38,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "122:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 41,
+                "name": "sender",
+                "nodeType": "VariableDeclaration",
+                "scope": 42,
+                "src": "142:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 40,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "142:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Log",
+            "nodeType": "StructDefinition",
+            "scope": 96,
+            "src": "85:76:1",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 45,
+            "name": "logs",
+            "nodeType": "VariableDeclaration",
+            "scope": 96,
+            "src": "165:17:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_Log_$42_storage_$dyn_storage",
+              "typeString": "struct Transactions.Log[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 43,
+                "name": "Log",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 42,
+                "src": "165:3:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Log_$42_storage_ptr",
+                  "typeString": "struct Transactions.Log"
+                }
+              },
+              "id": 44,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "165:5:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_Log_$42_storage_$dyn_storage_ptr",
+                "typeString": "struct Transactions.Log[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 53,
+            "name": "TransactionAdded",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 52,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 47,
+                  "indexed": true,
+                  "name": "sender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 53,
+                  "src": "210:22:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 46,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "210:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 49,
+                  "indexed": false,
+                  "name": "message",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 53,
+                  "src": "234:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 48,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "234:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 51,
+                  "indexed": false,
+                  "name": "timestamp",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 53,
+                  "src": "250:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 50,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "250:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "209:56:1"
+            },
+            "src": "187:79:1"
+          },
+          {
+            "body": {
+              "id": 76,
+              "nodeType": "Block",
+              "src": "325:106:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 62,
+                            "name": "_message",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 55,
+                            "src": "345:8:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 63,
+                            "name": "now",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 113,
+                            "src": "355:3:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 64,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 111,
+                              "src": "360:3:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 65,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "360:10:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            },
+                            {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          ],
+                          "id": 61,
+                          "name": "Log",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 42,
+                          "src": "341:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_struct$_Log_$42_storage_ptr_$",
+                            "typeString": "type(struct Transactions.Log storage pointer)"
+                          }
+                        },
+                        "id": 66,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "structConstructorCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "341:30:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Log_$42_memory",
+                          "typeString": "struct Transactions.Log memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Log_$42_memory",
+                          "typeString": "struct Transactions.Log memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 58,
+                        "name": "logs",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 45,
+                        "src": "331:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Log_$42_storage_$dyn_storage",
+                          "typeString": "struct Transactions.Log storage ref[] storage ref"
+                        }
+                      },
+                      "id": 60,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "331:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Log_$42_storage_$returns$_t_uint256_$",
+                        "typeString": "function (struct Transactions.Log storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 67,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "331:41:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 68,
+                  "nodeType": "ExpressionStatement",
+                  "src": "331:41:1"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 70,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 111,
+                          "src": "400:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 71,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "400:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 72,
+                        "name": "_message",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 55,
+                        "src": "412:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 73,
+                        "name": "now",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 113,
+                        "src": "422:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 69,
+                      "name": "TransactionAdded",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 53,
+                      "src": "383:16:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_string_memory_ptr_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,string memory,uint256)"
+                      }
+                    },
+                    "id": 74,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "383:43:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 75,
+                  "nodeType": "EmitStatement",
+                  "src": "378:48:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 77,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addTransaction",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 56,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 55,
+                  "name": "_message",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 77,
+                  "src": "294:22:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 54,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "294:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "293:24:1"
+            },
+            "returnParameters": {
+              "id": 57,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "325:0:1"
+            },
+            "scope": 96,
+            "src": "270:161:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 85,
+              "nodeType": "Block",
+              "src": "500:22:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 83,
+                    "name": "logs",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 45,
+                    "src": "513:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Log_$42_storage_$dyn_storage",
+                      "typeString": "struct Transactions.Log storage ref[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 82,
+                  "id": 84,
+                  "nodeType": "Return",
+                  "src": "506:11:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 86,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAllTransactions",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 78,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "462:2:1"
+            },
+            "returnParameters": {
+              "id": 82,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 81,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 86,
+                  "src": "486:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Log_$42_memory_$dyn_memory_ptr",
+                    "typeString": "struct Transactions.Log[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "contractScope": null,
+                      "id": 79,
+                      "name": "Log",
+                      "nodeType": "UserDefinedTypeName",
+                      "referencedDeclaration": 42,
+                      "src": "486:3:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Log_$42_storage_ptr",
+                        "typeString": "struct Transactions.Log"
+                      }
+                    },
+                    "id": 80,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "486:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Log_$42_storage_$dyn_storage_ptr",
+                      "typeString": "struct Transactions.Log[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "485:14:1"
+            },
+            "scope": 96,
+            "src": "435:87:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 94,
+              "nodeType": "Block",
+              "src": "584:29:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 91,
+                      "name": "logs",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 45,
+                      "src": "597:4:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Log_$42_storage_$dyn_storage",
+                        "typeString": "struct Transactions.Log storage ref[] storage ref"
+                      }
+                    },
+                    "id": 92,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "length",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "597:11:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 90,
+                  "id": 93,
+                  "nodeType": "Return",
+                  "src": "590:18:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 95,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getTransactionCount",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 87,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "554:2:1"
+            },
+            "returnParameters": {
+              "id": 90,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 89,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 95,
+                  "src": "578:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 88,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "578:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "577:6:1"
+            },
+            "scope": 96,
+            "src": "526:87:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 97,
+        "src": "59:556:1"
+      }
+    ],
+    "src": "0:615:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/sarthaksinghgaur/Blockchain-based-Transaction-Logging-dApp-using-Solidity-Ethereum-and-React/contracts/Transactions.sol",
+    "exportedSymbols": {
+      "Transactions": [
+        96
+      ]
+    },
+    "id": 97,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 34,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "id": 35,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "24:33:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 96,
+        "linearizedBaseContracts": [
+          96
+        ],
+        "name": "Transactions",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Transactions.Log",
+            "id": 42,
+            "members": [
+              {
+                "constant": false,
+                "id": 37,
+                "name": "message",
+                "nodeType": "VariableDeclaration",
+                "scope": 42,
+                "src": "102:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 36,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "102:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 39,
+                "name": "timestamp",
+                "nodeType": "VariableDeclaration",
+                "scope": 42,
+                "src": "122:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 38,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "122:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 41,
+                "name": "sender",
+                "nodeType": "VariableDeclaration",
+                "scope": 42,
+                "src": "142:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 40,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "142:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Log",
+            "nodeType": "StructDefinition",
+            "scope": 96,
+            "src": "85:76:1",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 45,
+            "name": "logs",
+            "nodeType": "VariableDeclaration",
+            "scope": 96,
+            "src": "165:17:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_Log_$42_storage_$dyn_storage",
+              "typeString": "struct Transactions.Log[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 43,
+                "name": "Log",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 42,
+                "src": "165:3:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Log_$42_storage_ptr",
+                  "typeString": "struct Transactions.Log"
+                }
+              },
+              "id": 44,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "165:5:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_Log_$42_storage_$dyn_storage_ptr",
+                "typeString": "struct Transactions.Log[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 53,
+            "name": "TransactionAdded",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 52,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 47,
+                  "indexed": true,
+                  "name": "sender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 53,
+                  "src": "210:22:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 46,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "210:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 49,
+                  "indexed": false,
+                  "name": "message",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 53,
+                  "src": "234:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 48,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "234:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 51,
+                  "indexed": false,
+                  "name": "timestamp",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 53,
+                  "src": "250:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 50,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "250:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "209:56:1"
+            },
+            "src": "187:79:1"
+          },
+          {
+            "body": {
+              "id": 76,
+              "nodeType": "Block",
+              "src": "325:106:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 62,
+                            "name": "_message",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 55,
+                            "src": "345:8:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 63,
+                            "name": "now",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 113,
+                            "src": "355:3:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 64,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 111,
+                              "src": "360:3:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 65,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "360:10:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            },
+                            {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          ],
+                          "id": 61,
+                          "name": "Log",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 42,
+                          "src": "341:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_struct$_Log_$42_storage_ptr_$",
+                            "typeString": "type(struct Transactions.Log storage pointer)"
+                          }
+                        },
+                        "id": 66,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "structConstructorCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "341:30:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Log_$42_memory",
+                          "typeString": "struct Transactions.Log memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Log_$42_memory",
+                          "typeString": "struct Transactions.Log memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 58,
+                        "name": "logs",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 45,
+                        "src": "331:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Log_$42_storage_$dyn_storage",
+                          "typeString": "struct Transactions.Log storage ref[] storage ref"
+                        }
+                      },
+                      "id": 60,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "331:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Log_$42_storage_$returns$_t_uint256_$",
+                        "typeString": "function (struct Transactions.Log storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 67,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "331:41:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 68,
+                  "nodeType": "ExpressionStatement",
+                  "src": "331:41:1"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 70,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 111,
+                          "src": "400:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 71,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "400:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 72,
+                        "name": "_message",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 55,
+                        "src": "412:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 73,
+                        "name": "now",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 113,
+                        "src": "422:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 69,
+                      "name": "TransactionAdded",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 53,
+                      "src": "383:16:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_string_memory_ptr_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,string memory,uint256)"
+                      }
+                    },
+                    "id": 74,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "383:43:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 75,
+                  "nodeType": "EmitStatement",
+                  "src": "378:48:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 77,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addTransaction",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 56,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 55,
+                  "name": "_message",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 77,
+                  "src": "294:22:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 54,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "294:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "293:24:1"
+            },
+            "returnParameters": {
+              "id": 57,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "325:0:1"
+            },
+            "scope": 96,
+            "src": "270:161:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 85,
+              "nodeType": "Block",
+              "src": "500:22:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 83,
+                    "name": "logs",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 45,
+                    "src": "513:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Log_$42_storage_$dyn_storage",
+                      "typeString": "struct Transactions.Log storage ref[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 82,
+                  "id": 84,
+                  "nodeType": "Return",
+                  "src": "506:11:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 86,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAllTransactions",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 78,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "462:2:1"
+            },
+            "returnParameters": {
+              "id": 82,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 81,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 86,
+                  "src": "486:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Log_$42_memory_$dyn_memory_ptr",
+                    "typeString": "struct Transactions.Log[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "contractScope": null,
+                      "id": 79,
+                      "name": "Log",
+                      "nodeType": "UserDefinedTypeName",
+                      "referencedDeclaration": 42,
+                      "src": "486:3:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Log_$42_storage_ptr",
+                        "typeString": "struct Transactions.Log"
+                      }
+                    },
+                    "id": 80,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "486:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Log_$42_storage_$dyn_storage_ptr",
+                      "typeString": "struct Transactions.Log[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "485:14:1"
+            },
+            "scope": 96,
+            "src": "435:87:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 94,
+              "nodeType": "Block",
+              "src": "584:29:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 91,
+                      "name": "logs",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 45,
+                      "src": "597:4:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Log_$42_storage_$dyn_storage",
+                        "typeString": "struct Transactions.Log storage ref[] storage ref"
+                      }
+                    },
+                    "id": 92,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "length",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "597:11:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 90,
+                  "id": 93,
+                  "nodeType": "Return",
+                  "src": "590:18:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 95,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getTransactionCount",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 87,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "554:2:1"
+            },
+            "returnParameters": {
+              "id": 90,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 89,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 95,
+                  "src": "578:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 88,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "578:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "577:6:1"
+            },
+            "scope": 96,
+            "src": "526:87:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 97,
+        "src": "59:556:1"
+      }
+    ],
+    "src": "0:615:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x003201182801F9734f365047eF737DcdAc61A030",
+      "transactionHash": "0x8ce1fe6ba191b6f8a8f7c6c0c8f68eba3304828c8d9c5f26d384a39c3551f01e"
+    }
+  },
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2025-05-28T06:31:26.373Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
