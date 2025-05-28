@@ -75,19 +75,19 @@ App = {
   renderTransactions: async () => {
     // Load the total transaction count from the blockchain
     const transactionCount = await App.transactions.methods.getTransactionCount().call();
+    console.log(transactionCount) // cheching transactions count in the blockchain
     const $transactionTemplate = $('.transactionTemplate')
 
     // Render out each transaction with a new transaction template
     for (var i = 1; i <= transactionCount; i++) {
-      // Fetch the transaction data from the blockchain
-      const transaction = await App.transactions.methods.transactions(i).call()
-      const transactionId = parseInt(transaction[0])
-      const transactionDetails = transaction[1]
-      const transactionTimestamp = transaction[2]
+        const transaction = await App.transactions.methods.logs(i - 1).call();
+        const transactionDetails = transaction.message;
+        const transactionTimestamp = transaction.timestamp;
+        console.log(transaction)
 
       // Create the html for the transaction
       const $newTransactionTemplate = $transactionTemplate.clone()
-      $newTransactionTemplate.find('.details').html(transactionDetails)
+      $newTransactionTemplate.find('.message').html(transactionDetails)
       $newTransactionTemplate.find('.timestamp').html(new Date(transactionTimestamp * 1000).toLocaleString())
 
       // Append the transaction to the list
