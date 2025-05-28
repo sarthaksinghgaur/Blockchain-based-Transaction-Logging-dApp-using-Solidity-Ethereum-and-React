@@ -13,8 +13,8 @@ contract Transactions {
   event TransactionAdded(address indexed sender, string message, uint timestamp);
 
   function addTransaction(string memory _message) public {
-    logs.push(Log(_message, now, msg.sender));
-    emit TransactionAdded(msg.sender, _message, now);
+    logs.push(Log(_message, block.timestamp, msg.sender));
+    emit TransactionAdded(msg.sender, _message, block.timestamp);
   }
 
   function getAllTransactions() public view returns (Log[] memory) {

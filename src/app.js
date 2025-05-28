@@ -7,6 +7,7 @@ App = {
     await App.loadAccount()
     await App.loadContract()
     await App.render()
+    App.bindEvents()
   },
 
   // https://medium.com/metamask/https-medium-com-metamask-breaking-change-injecting-web3-7722797916a8
@@ -51,6 +52,16 @@ App = {
       transactions.abi,
       deployedNetwork && deployedNetwork.address,
     )
+
+    // Listen for the Transaction Added event and append new transactions
+    App.transactions.events.TransactionAdded({}, (error, event) => {
+      if (!error) {
+        const transaction = event.returnValues;
+        App.appendTransaction(transaction.message, transaction.timestamp);
+      } else {
+        console.error(error);
+      }
+    });
   },
 
   render: async () => {
@@ -73,6 +84,9 @@ App = {
   },
 
   renderTransactions: async () => {
+    // Clear previously rendered transactions but keep the template
+    $('#transactionList').children().not('.transactionTemplate').remove();
+
     // Load the total transaction count from the blockchain
     const transactionCount = await App.transactions.methods.getTransactionCount().call();
     console.log(transactionCount) // cheching transactions count in the blockchain
@@ -98,6 +112,15 @@ App = {
     }
   },
 
+  appendTransaction: (message, timestamp) => {
+    const $transactionTemplate = $('.transactionTemplate').first()
+    const $newTransactionTemplate = $transactionTemplate.clone()
+    $newTransactionTemplate.find('.message').html(message)
+    $newTransactionTemplate.find('.timestamp').html(new Date(timestamp * 1000).toLocaleString())
+    $('#transactionList').append($newTransactionTemplate)
+    $newTransactionTemplate.show()
+  },
+
   setLoading: (boolean) => {
     App.loading = boolean
     const loader = $('#loader')
@@ -109,12 +132,34 @@ App = {
       loader.hide()
       content.show()
     }
+  },
+
+  bindEvents: () => {
+    $('#transactionForm').submit(App.handleAddTransaction)
+  },
+
+  handleAddTransaction: async (event) => {
+    event.preventDefault()
+    const message = $('#transactionInput').val()
+    if (message.trim() === '') {
+      alert('Please enter a transaction message.')
+      return
+    }
+    App.setLoading(true)
+    try {
+      await App.transactions.methods.addTransaction(message).send({ from: App.account })
+      $('#transactionInput').val('')
+      // No need to call renderTransactions here because the event listener will append the new transaction
+    } catch (error) {
+      console.error(error)
+      alert('Error adding transaction. See console for details.')
+    }
+    App.setLoading(false)
   }
 }
 
 $(() => {
   $(window).load(() => {
     App.load()
-
   })
 })

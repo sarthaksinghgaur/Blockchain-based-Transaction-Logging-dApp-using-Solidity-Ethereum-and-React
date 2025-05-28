@@ -47,6 +47,13 @@
             <p class="text-center">Loading...</p>
           </div>
           <div id="content">
+            <form id="transactionForm" class="mb-4">
+              <div class="form-group">
+                <label for="transactionInput">New Transaction</label>
+                <input type="text" class="form-control" id="transactionInput" placeholder="Enter transaction message" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Add Transaction</button>
+            </form>
             <ul id="transactionList" class="list-unstyled">
               <div class="transactionTemplate" style="display: none">
                 <label>
