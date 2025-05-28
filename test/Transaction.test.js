@@ -37,4 +37,25 @@ contract('Transactions', (accounts) => {
     assert.equal(allLogs[1].message, message2)
     assert.equal(allLogs[1].sender, accounts[1])
   })
+
+  it('adds multiple transactions', async () => {
+    // Add multiple transactions
+    const messages = ['Third transaction', 'Fourth transaction', 'Fifth transaction']
+    const senders = [accounts[2], accounts[3], accounts[4]]
+    for (let i = 0; i < messages.length; i++) {
+      await this.transactions.addTransaction(messages[i], { from: senders[i] })
+    }
+    // Check transaction count
+    const count = await this.transactions.getTransactionCount()
+    assert.equal(count.toNumber(), 5) // 2 from previous tests + 3 just added
+    // Retrieve all transactions and check contents of the newly added ones
+    const allLogs = await this.transactions.getAllTransactions()
+    assert.equal(allLogs.length, 5)
+    for (let i = 0; i < messages.length; i++) {
+      const tx = allLogs[2 + i]
+      assert.equal(tx.message, messages[i])
+      assert.equal(tx.sender, senders[i])
+      assert.ok(Number(tx.timestamp) > 0)
+    }
+  })
 })
