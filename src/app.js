@@ -40,13 +40,17 @@ App = {
   },
 
   loadContract: async () => {
-    // Create a JavaScript version of the smart contract
+    // Load contract JSON
     const transactions = await $.getJSON('Transactions.json')
-    App.contracts.Transactions = TruffleContract(transactions)
-    App.contracts.Transactions.setProvider(App.web3Provider)
+    console.log(transactions) //testing contract loading
 
-    // Hydrate the smart contract with values from the blockchain
-    App.transactions = await App.contracts.Transactions.deployed()
+    // Use Web3 to create contract instance
+    const networkId = await web3.eth.net.getId()
+    const deployedNetwork = transactions.networks[networkId]
+    App.transactions = new web3.eth.Contract(
+      transactions.abi,
+      deployedNetwork && deployedNetwork.address,
+    )
   },
 
   render: async () => {
@@ -70,14 +74,14 @@ App = {
 
   renderTransactions: async () => {
     // Load the total transaction count from the blockchain
-    const transactionCount = await App.transactions.transactionCount()
+    const transactionCount = await App.transactions.methods.getTransactionCount().call();
     const $transactionTemplate = $('.transactionTemplate')
 
     // Render out each transaction with a new transaction template
     for (var i = 1; i <= transactionCount; i++) {
       // Fetch the transaction data from the blockchain
-      const transaction = await App.transactions.transactions(i)
-      const transactionId = transaction[0].toNumber()
+      const transaction = await App.transactions.methods.transactions(i).call()
+      const transactionId = parseInt(transaction[0])
       const transactionDetails = transaction[1]
       const transactionTimestamp = transaction[2]
 
